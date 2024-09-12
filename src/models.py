@@ -68,6 +68,9 @@ class Movies(Base):
 class Director(Base):
     __tablename__ = 'director'
     id = Column(String(250), primary_key=True)
+    age = Column(Integer, nullable=False)
+    lastname = Column(String(250), nullable=False)
+    name = Column(String(250), nullable=False)
 
 class FavoritePlanet(Base):
     __tablename__ = 'favorite planet'

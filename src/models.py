@@ -72,32 +72,18 @@ class Director(Base):
     lastname = Column(String(250), nullable=False)
     name = Column(String(250), nullable=False)
 
-class FavoritePlanet(Base):
+class MyFavorites(Base):
     __tablename__ = 'favorite planet'
     id = Column(Integer, primary_key=True)
     user = Column(String(250), ForeignKey('user.id'))
     planet = Column(Integer, ForeignKey('planet.id'))
-    
-    def to_dict(self):
-        return {}
-    
-class FavoriteVehicle(Base):
-    __tablename__ = 'favorite vehicle'
-    id = Column(Integer, primary_key=True)
-    user = Column(String(250), ForeignKey('user.id'))
+    director = Column(Integer, ForeignKey('director.id'))
+    movie = Column(Integer, ForeignKey('movies.id'))
     vehicle = Column(Integer, ForeignKey('vehicle.id'))
-    
-    def to_dict(self):
-        return {}
-    
-class FavoriteChar(Base):
-    __tablename__ = 'favorite character'
-    id = Column(Integer, primary_key=True)
-    user = Column(String(250), ForeignKey('user.id'))
     character = Column(Integer, ForeignKey('character.id'))
-    
     def to_dict(self):
         return {}
+    
     
 
 ## Draw from SQLAlchemy base

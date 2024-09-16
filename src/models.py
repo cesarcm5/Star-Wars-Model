@@ -73,7 +73,7 @@ class Director(Base):
     name = Column(String(250), nullable=False)
 
 class MyFavorites(Base):
-    __tablename__ = 'favorite planet'
+    __tablename__ = 'My Favorties'
     id = Column(Integer, primary_key=True)
     user = Column(String(250), ForeignKey('user.id'))
     planet = Column(Integer, ForeignKey('planet.id'))

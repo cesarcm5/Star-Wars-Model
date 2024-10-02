@@ -26,6 +26,8 @@ class Character(Base):
     planet_origin = Column(Integer, ForeignKey('planet.id'))
     height = Column(Float, nullable=False)
     weight = Column(Float, nullable=False)
+    outfit = Column(ForeignKey('character outfit.id'))
+    light_saber = Column(ForeignKey('light saber.id'))
 
     def to_dict(self):
         return {}
@@ -65,12 +67,40 @@ class Movies(Base):
     def to_dict(self):
         return {}
     
+class ship(Base):
+    __tablename__ = 'ship'
+    id = Column(Integer, primary_key=True)
+    capacity= Column(Integer, nullable=False)
+    color = Column(String(250), nullable=False)
+    speed = Column(String(250), nullable=False)
+
+    def to_dict(self):
+        return {}
+    
+class Outfit(Base):
+    __tablename__ = 'character outfit'
+    id = Column(Integer, primary_key=True)
+    pants = Column(String(250), nullable=False)
+    shoes = Column(String(250), nullable=False)
+    robe = Column(String(250), nullable=False)
+
+    def to_dict(self):
+        return {}
+    
+class LightSaber(Base):
+    __tablename__ = 'light saber'
+    id = Column(Integer, primary_key=True)
+    color = Column(String, nullable=False)
+
 class Director(Base):
     __tablename__ = 'director'
     id = Column(String(250), primary_key=True)
     age = Column(Integer, nullable=False)
     lastname = Column(String(250), nullable=False)
     name = Column(String(250), nullable=False)
+
+    def to_dict(self):
+        return {}
 
 class MyFavorites(Base):
     __tablename__ = 'My Favorties'
@@ -83,8 +113,7 @@ class MyFavorites(Base):
     character = Column(Integer, ForeignKey('character.id'))
     def to_dict(self):
         return {}
-    
-    
+        
 
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')

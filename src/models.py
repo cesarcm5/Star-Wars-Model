@@ -28,6 +28,16 @@ class Character(Base):
     weight = Column(Float, nullable=False)
     outfit = Column(ForeignKey('character outfit.id'))
     light_saber = Column(ForeignKey('light saber.id'))
+    android = Column(ForeignKey('android.id'))
+
+    def to_dict(self):
+        return {}
+    
+class Android(Base):
+    __tablename__ = 'android'
+    id = Column(Integer, primary_key=True)
+    color = Column(String(250), nullable=False)
+    model = Column(Integer, nullable=False)
 
     def to_dict(self):
         return {}
@@ -67,16 +77,7 @@ class Movies(Base):
     def to_dict(self):
         return {}
     
-class ship(Base):
-    __tablename__ = 'ship'
-    id = Column(Integer, primary_key=True)
-    capacity= Column(Integer, nullable=False)
-    color = Column(String(250), nullable=False)
-    speed = Column(String(250), nullable=False)
 
-    def to_dict(self):
-        return {}
-    
 class Outfit(Base):
     __tablename__ = 'character outfit'
     id = Column(Integer, primary_key=True)
@@ -90,7 +91,11 @@ class Outfit(Base):
 class LightSaber(Base):
     __tablename__ = 'light saber'
     id = Column(Integer, primary_key=True)
-    color = Column(String, nullable=False)
+    light_color = Column(String(250), nullable=False)
+    handle = Column(String(250), nullalbe=False)
+    
+    def to_dict(self):
+        return {}
 
 class Director(Base):
     __tablename__ = 'director'
@@ -111,6 +116,7 @@ class MyFavorites(Base):
     movie = Column(Integer, ForeignKey('movies.id'))
     vehicle = Column(Integer, ForeignKey('vehicle.id'))
     character = Column(Integer, ForeignKey('character.id'))
+    light_saber = Column(Integer, ForeignKey('light saber.id'))
     def to_dict(self):
         return {}
         

@@ -1,46 +1,75 @@
-<!--hide-->
-# StarWars blog database
-<!--endhide-->
+Star Wars Data Model
 
-**Important**: To do this activity, you need to `fork` [this repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) into your **Github** account and then open the forked repo on Codespaces (recommended) or Gitpod.
+This project provides a comprehensive data model for the Star Wars universe, facilitating the organization and management of information related to characters, planets, and user interactions.
 
-Inside the `src/models.py` file you will find a couple of classes describing an example database.
+Features
 
-Here is a 10 min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
+	•	User Management: Handles user data, enabling login functionality and the ability to save favorite characters and planets.
+	•	Character and Planet Information: Stores detailed data about various characters and planets from the Star Wars universe.
+	•	Favorites System: Allows users to mark characters and planets as favorites for easy access.
 
-We are going to be creating the Entity Relationship Diagram for your StarWars Blog Database, a very similar diagram to this one:
+Installation
 
-![Starwars Diagram](https://github.com/breatheco-de/exercise-starwars-data-modeling/blob/master/assets/example.png?raw=true)
-[Click to open diagram](https://app.quickdatabasediagrams.com/#/d/LxNXQZ)
+To set up the project locally:
+	1.	Clone the repository:
 
-> 🔥 You can use this FREE tool to practice your diagram for the first time: https://app.quickdatabasediagrams.com/#/d/
-
-## 💻 Installation
-
-1. Get inside the environment `$ pipenv shell`
-
-2. Install all dependencies `$ pipenv install`
-
-3. Generate the diagram as many times as you need `$ python src/models.py`
-
-4. Open the file `diagram.png` to check out your UML diagram!
+git clone https://github.com/cesarcm5/Star-Wars-Model.git
 
 
-## 📝 Instructions
+	2.	Navigate to the project directory:
 
-Your Job is to update the `src/models.py` file with the code needed to replicate the StarWars data model.
+cd Star-Wars-Model
 
-The project is using the SQLAlchemy Python library to generate the database.
 
-- Your project must have a table `User` that will represent your blog users.
-- Your blog users will be able to login and save their favorite planets and characters.
-- The database should store the user favorites.
-- The database should store characters and planets.
-- What other tables do you think a blog like this might have?
-- What properties should go inside the user? or inside the Character or Favorite table?
-- What are the relationships between those tables?
-- Please add at least 4 models with all of their properties.
-- Generate the `diagram.png` file at the end by running `$ python src/models.py` on the console.
+	3.	Install the required dependencies:
 
-This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+pipenv install
 
+
+	4.	Activate the virtual environment:
+
+pipenv shell
+
+
+	5.	Set up the database:
+
+pipenv run init
+pipenv run migrate
+pipenv run upgrade
+
+
+
+Usage
+
+After installation, you can interact with the data model to manage users, characters, planets, and favorites.
+
+Contributing
+
+Contributions are welcome! To contribute:
+	1.	Fork the repository.
+	2.	Create a new branch:
+
+git checkout -b feature/YourFeatureName
+
+
+	3.	Make your changes and commit them:
+
+git commit -m 'Add some feature'
+
+
+	4.	Push to the branch:
+
+git push origin feature/YourFeatureName
+
+
+	5.	Open a pull request.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Acknowledgments
+
+This project is a fork of the 4GeeksAcademy/exercise-starwars-data-modeling repository.
+
+For more information, visit the Star Wars Data Model GitHub Repository.
